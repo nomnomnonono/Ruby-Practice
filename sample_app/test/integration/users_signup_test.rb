@@ -23,5 +23,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     follow_redirect!  # リダイレクト先に移動するメソッド
     assert_template "users/show"
     assert_not flash.count == 0
+    assert is_logged_in?  # 登録後にログイン状態となっているか
   end
 end
